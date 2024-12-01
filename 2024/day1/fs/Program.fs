@@ -1,7 +1,7 @@
 ﻿open System.IO
 
 module Day1 =
-    let getData path =
+    let private getData path =
         File.ReadLines path
         |> Seq.map(fun x -> x.Split("   "))
         |> Seq.map(fun x -> x |> Array.map int64)
