@@ -13,10 +13,10 @@ type Entry struct {
 }
 
 func LoadFile(test bool) ([]*Entry, []*Entry, error) {
-	path := "./input.txt"
+	path := "../day1.input"
 
 	if test {
-		path = "./input-test.txt"
+		path = "../day1.test"
 	}
 
 	file, err := os.Open(path)
