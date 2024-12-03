@@ -41,13 +41,40 @@ module Day2 =
     let private isValid level =
         checkNext(true, false, false, -1, level)
 
+    let private remove (arr: int[], i: int) =
+        arr
+        |> Array.removeAt i
+
+    let rec private makeValid (level: int[], i: int) =
+        if i >= level.Length then
+            false
+        else
+            if isValid(level) then
+                true
+            else
+                let removed = remove(level, i)
+                if isValid(removed) then
+                    true
+                else
+                    makeValid(level, i + 1)
+
+    let acc data =
+        data
+        |> Seq.map(fun x -> if x then 1 else 0)
+        |> Seq.sum
+        |> printfn "%A"
+
     let RunPart1 path =
         path
         |> getData
         |> Seq.map isValid
-        |> Seq.map(fun x -> if x then 1 else 0)
-        |> Seq.sum
-        |> printfn "%A"
+        |> acc
+
+    let RunPart2 path =
+        path
+        |> getData
+        |> Seq.map(fun x -> makeValid(x, 0))
+        |> acc
 
 
 [<EntryPoint>]
@@ -65,7 +92,13 @@ let main argv =
                 // Run actual data
                 Day2.RunPart1  "../day2.input"
                 0
-
         else
-            1
+            if argv.Length = 2 && argv.[1] = "-t" then
+                // Run tests
+                let _ = Day2.RunPart2 "../day2.test"
+                0
+            else
+                // Run actual data
+                let _ = Day2.RunPart2 "../day2.input"
+                0
 
