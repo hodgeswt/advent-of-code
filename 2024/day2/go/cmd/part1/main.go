@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	levels, err := util.LoadData(true)
+	levels, err := util.LoadData(false)
 
 	if err != nil {
 		panic(err)
