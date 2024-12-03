@@ -8,14 +8,14 @@ import (
 )
 
 func remove(slice []int, s int) []int {
-    sliced := []int{}
-    for i, v := range slice {
-        if i != s {
-            sliced = append(sliced, v)
-        }
-    }
+	sliced := []int{}
+	for i, v := range slice {
+		if i != s {
+			sliced = append(sliced, v)
+		}
+	}
 
-    return sliced
+	return sliced
 }
 
 func MakeValid(level []int) bool {

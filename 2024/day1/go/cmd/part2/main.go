@@ -8,15 +8,15 @@ import (
 )
 
 func countMatches(m []*util.Entry, target int64) int64 {
-    var c int64 = 0
+	var c int64 = 0
 
-    for _, v := range m {
-        if v.Value == target {
-            c = c + 1
-        }
-    }
+	for _, v := range m {
+		if v.Value == target {
+			c = c + 1
+		}
+	}
 
-    return c
+	return c
 }
 
 func main() {
@@ -29,11 +29,11 @@ func main() {
 
 	var s int64 = 0
 
-    for i := 0; i < len(x); i++ {
-        c := countMatches(y, x[i].Value)
+	for i := 0; i < len(x); i++ {
+		c := countMatches(y, x[i].Value)
 
-        s = s + (x[i].Value * c)
-    }
+		s = s + (x[i].Value * c)
+	}
 
-    fmt.Printf("Found answer: %d\n", s)
+	fmt.Printf("Found answer: %d\n", s)
 }

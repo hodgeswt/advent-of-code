@@ -15,10 +15,10 @@ func main() {
 
 	count := 0
 	for _, level := range levels {
-        if util.MakeValid(level) {
+		if util.MakeValid(level) {
 			count++
 		}
 	}
 
-    fmt.Printf("Safe levels: %d\n", count)
+	fmt.Printf("Safe levels: %d\n", count)
 }

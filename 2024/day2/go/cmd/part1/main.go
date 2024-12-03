@@ -13,16 +13,14 @@ func main() {
 		panic(err)
 	}
 
-    count := 0
-    for _, level := range levels {
-        safe := util.IsValid(level)
+	count := 0
+	for _, level := range levels {
+		safe := util.IsValid(level)
 
-        if safe {
-            count++
-        }
-    }
+		if safe {
+			count++
+		}
+	}
 
-    fmt.Printf("%d levels are safe\n", count)
+	fmt.Printf("%d levels are safe\n", count)
 }
-
-
