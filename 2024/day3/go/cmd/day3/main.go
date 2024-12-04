@@ -15,16 +15,16 @@ func main() {
 
 	flag.Parse()
 
-    var p func(bool)
+	var p func(bool)
 
 	if *part == 1 {
 		p = util.RunPart1
-    } else if *part == 2 {
-        p = util.RunPart2
-    } else {
-        fmt.Printf("Unexpected -p value %d, expected one of [1, 2]\n", part)
-        os.Exit(1)
-    }
+	} else if *part == 2 {
+		p = util.RunPart2
+	} else {
+		fmt.Printf("Unexpected -p value %d, expected one of [1, 2]\n", part)
+		os.Exit(1)
+	}
 
-    p(*testMode)
+	p(*testMode)
 }

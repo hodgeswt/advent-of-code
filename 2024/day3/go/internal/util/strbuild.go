@@ -22,17 +22,17 @@ func (it *StrBuild) String() string {
 }
 
 func (it *StrBuild) Flush() string {
-    s := it.String()
-    it.Reset()
+	s := it.String()
+	it.Reset()
 
-    return s
+	return s
 }
 
 func (it *StrBuild) Reset() {
 	it.data = []rune{}
-    it.empty = true
+	it.empty = true
 }
 
 func (it *StrBuild) IsEmpty() bool {
-    return it.empty
+	return it.empty
 }

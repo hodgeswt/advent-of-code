@@ -45,13 +45,13 @@ func RunPart2(testMode bool) {
 		panic(err)
 	}
 
-    exprs, err := Parse(tokens, true)
+	exprs, err := Parse(tokens, true)
 
 	if err != nil {
 		panic(err)
 	}
 
-    fmt.Printf("The answer is: %d\n", Eval(exprs))
+	fmt.Printf("The answer is: %d\n", Eval(exprs))
 
 }
 

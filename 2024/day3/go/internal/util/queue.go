@@ -9,7 +9,7 @@ type Queue struct {
 }
 
 func (it *Queue) Enqueue(r rune) {
-    it.Data = append(it.Data, r)
+	it.Data = append(it.Data, r)
 }
 
 func (it *Queue) Push(r rune) {
